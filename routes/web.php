@@ -7,9 +7,14 @@ Route::get('/', function () {
     return view('welcome');
 })->name('home');
 
-Route::view('dashboard', 'dashboard')
-    ->middleware(['auth', 'verified'])
-    ->name('dashboard');
+
+
+Route::view('dashboard', 'dashboard')->name('dashboard');
+Route::view('case-mark', 'case-mark')->name('case-mark');
+Route::view('history', 'history')->name('history');
+Route::view('upload', 'upload')->name('upload');
+Route::view('list-cs', 'list-cs')->name('list-cs');
+Route::view('list-cs-detail', 'list-cs-detail')->name('list-cs-detail');
 
 Route::middleware(['auth'])->group(function () {
     Route::redirect('settings', 'settings/profile');
